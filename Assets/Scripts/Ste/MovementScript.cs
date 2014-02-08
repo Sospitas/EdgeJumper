@@ -18,6 +18,8 @@ public class MovementScript : MonoBehaviour
 	public float jumpForce;
 	public float moveDampX;
 	public float mobileMovementVal;
+	public GameObject left, right;
+	public Material green, gray;
 	
 	private float distanceToGround, distanceToSides;
 	
@@ -38,6 +40,17 @@ public class MovementScript : MonoBehaviour
 		{
 			onMobile = true;
 		};
+		
+		if(!onMobile)
+		{
+			left.renderer.enabled = false;
+			right.renderer.enabled = false;
+		}
+		else
+		{
+			left.renderer.enabled = true;
+			right.renderer.enabled = true;
+		}
 		this.rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 		distanceToGround = this.collider.bounds.extents.y;
 		distanceToSides = this.collider.bounds.extents.x;
@@ -54,8 +67,6 @@ public class MovementScript : MonoBehaviour
 		{
 			InputsPC ();
 		}
-		
-		Debug.Log(Screen.width * mobileMovementVal);
 	}
 	
 	void FixedUpdate()
@@ -121,12 +132,16 @@ public class MovementScript : MonoBehaviour
 				//Move Left
 				if(Input.GetTouch(i).position.x < (Screen.width * mobileMovementVal) && !wallSlideLeft())
 				{
+					left.renderer.material = green;
+					right.renderer.material = gray;
 					leftMove = true;
 					rightMove = false;
 				}
 				// Move Right
 				else if(Input.GetTouch(i).position.x > Screen.width - (Screen.width * mobileMovementVal) && !wallSlideRight())
 				{
+					right.renderer.material = green;
+					left.renderer.material = gray;
 					rightMove = true; 
 					leftMove = false;
 				}
@@ -143,6 +158,8 @@ public class MovementScript : MonoBehaviour
 		//No movement input
 		else 
 		{
+			right.renderer.material = gray;
+			left.renderer.material = gray;
 			rightMove = leftMove = false;
 		}
 	}
