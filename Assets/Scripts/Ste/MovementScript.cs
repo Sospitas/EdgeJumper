@@ -10,14 +10,16 @@ public class MovementScript : MonoBehaviour
 	//maxVel = 18
 	//jumpForce = 70
 	//moveDampX = 1
+	//mobileMovement = 0.35f
+	
 	
 	public float moveSpeed;
 	public float maxVel;
 	public float jumpForce;
 	public float moveDampX;
-	
-	//Default = 0.2f
-	public float mobileMovement = Screen.width * 0.2f;
+	public float mobileMovementVal;
+
+	private float mobileMovement;
 	
 	private float distanceToGround, distanceToSides;
 	
@@ -30,9 +32,6 @@ public class MovementScript : MonoBehaviour
 	
 	private bool onMobile = false;
 	
-	
-	
-	
 	// Use this for initialization
 	void Start ()
 	{
@@ -40,7 +39,7 @@ public class MovementScript : MonoBehaviour
 		{
 			onMobile = true;
 		}
-		
+		mobileMovement = Screen.width * mobileMovementVal;
 		this.rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 		distanceToGround = this.collider.bounds.extents.y;
 		distanceToSides = this.collider.bounds.extents.x;
@@ -225,19 +224,19 @@ public class MovementScript : MonoBehaviour
 	//Direction.
 	bool wallSlideLeft()
 	{
-		if(Physics.Raycast(this.transform.position, Vector3.left, distanceToSides + 0.1f))
+		if(Physics.Raycast(this.transform.position, Vector3.left, distanceToSides + 0.05f))
 		{
 			this.rigidbody.velocity = new Vector3(0.0f, this.rigidbody.velocity.y, 0.0f);
 			return true;
 		}
 		else if(Physics.Raycast((new Vector3(this.transform.position.x, this.transform.position.y + this.rigidbody.collider.bounds.extents.y/2, 
-			this.transform.position.z)), Vector3.left, distanceToSides + 0.1f))
+			this.transform.position.z)), Vector3.left, distanceToSides + 0.05f))
 		{
 			this.rigidbody.velocity = new Vector3(0.0f, this.rigidbody.velocity.y, 0.0f);
 			return true;
 		}
 		else if(Physics.Raycast((new Vector3(this.transform.position.x, this.transform.position.y - this.rigidbody.collider.bounds.extents.y/2, 
-			this.transform.position.z)), Vector3.left, distanceToSides + 0.1f))
+			this.transform.position.z)), Vector3.left, distanceToSides + 0.05f))
 		{
 			this.rigidbody.velocity = new Vector3(0.0f, this.rigidbody.velocity.y, 0.0f);
 			return true;
@@ -249,19 +248,19 @@ public class MovementScript : MonoBehaviour
 	//Direction.
 	bool wallSlideRight()
 	{
-		if(Physics.Raycast(this.transform.position, Vector3.right, distanceToSides + 0.1f))
+		if(Physics.Raycast(this.transform.position, Vector3.right, distanceToSides + 0.05f))
 		{
 			this.rigidbody.velocity = new Vector3(0.0f, this.rigidbody.velocity.y, 0.0f);
 			return true;	
 		}
 		else if(Physics.Raycast((new Vector3(this.transform.position.x, this.transform.position.y + this.rigidbody.collider.bounds.extents.y/2, 
-			this.transform.position.z)), Vector3.right, distanceToSides + 0.1f))
+			this.transform.position.z)), Vector3.right, distanceToSides + 0.05f))
 		{
 			this.rigidbody.velocity = new Vector3(0.0f, this.rigidbody.velocity.y, 0.0f);
 			return true;
 		}
 		else if(Physics.Raycast((new Vector3(this.transform.position.x, this.transform.position.y - this.rigidbody.collider.bounds.extents.y/2, 
-			this.transform.position.z)), Vector3.right, distanceToSides + 0.1f))
+			this.transform.position.z)), Vector3.right, distanceToSides + 0.05f))
 		{
 			this.rigidbody.velocity = new Vector3(0.0f, this.rigidbody.velocity.y, 0.0f);
 			return true;

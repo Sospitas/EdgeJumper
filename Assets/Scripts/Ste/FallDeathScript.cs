@@ -4,6 +4,8 @@ using System.Collections;
 //Steven Brown
 public class FallDeathScript : MonoBehaviour 
 {
+	//Defaults:
+	//deathVal 
 	public float deathVel;
 	
 	private bool canDie = false;
@@ -11,7 +13,6 @@ public class FallDeathScript : MonoBehaviour
 	void FixedUpdate()
 	{
 		checkSpeed();
-		//Debug.Log("Fall Speed: " + this.transform.parent.rigidbody.velocity.y);
 	}
 	
 	//Check if the player is falling too fast. If so change the bool.

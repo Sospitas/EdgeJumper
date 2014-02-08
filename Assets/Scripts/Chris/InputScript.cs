@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class InputScript : MonoBehaviour
-{	
-	private bool hasPauseScript = false;
+{
 	
 	// Update is called once per frame
 	void Update ()
