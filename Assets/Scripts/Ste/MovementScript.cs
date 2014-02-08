@@ -18,8 +18,6 @@ public class MovementScript : MonoBehaviour
 	public float jumpForce;
 	public float moveDampX;
 	public float mobileMovementVal;
-
-	private float mobileMovement;
 	
 	private float distanceToGround, distanceToSides;
 	
@@ -35,11 +33,11 @@ public class MovementScript : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		Physics.gravity = new Vector3(0, -9.81f, 0);
 		if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.OSXPlayer)
 		{
 			onMobile = true;
-		}
-		mobileMovement = Screen.width * mobileMovementVal;
+		};
 		this.rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 		distanceToGround = this.collider.bounds.extents.y;
 		distanceToSides = this.collider.bounds.extents.x;
@@ -56,6 +54,8 @@ public class MovementScript : MonoBehaviour
 		{
 			InputsPC ();
 		}
+		
+		Debug.Log(Screen.width * mobileMovementVal);
 	}
 	
 	void FixedUpdate()
@@ -118,19 +118,19 @@ public class MovementScript : MonoBehaviour
 		{
 			for(int i = 0; i < Input.touchCount; i++)
 			{
-				//Move Right
-				if(Input.GetTouch(i).position.x < mobileMovement && !wallSlideLeft())
+				//Move Left
+				if(Input.GetTouch(i).position.x < (Screen.width * mobileMovementVal) && !wallSlideLeft())
 				{
 					leftMove = true;
 					rightMove = false;
 				}
-				
-				else if(Input.GetTouch(i).position.x > Screen.width - mobileMovement && !wallSlideRight())
+				// Move Right
+				else if(Input.GetTouch(i).position.x > Screen.width - (Screen.width * mobileMovementVal) && !wallSlideRight())
 				{
 					rightMove = true; 
 					leftMove = false;
 				}
-				else if(Input.GetTouch(i).position.x < Screen.width - mobileMovement && Input.GetTouch(i).position.x > mobileMovement && isGrounded())
+				else if(Input.GetTouch(i).position.x < Screen.width - Screen.width * mobileMovementVal && Input.GetTouch(i).position.x > Screen.width * mobileMovementVal && isGrounded())
 				{
 					jump = true;
 				}

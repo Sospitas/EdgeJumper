@@ -1,9 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Ste\EndLevelScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ste/EndLevelScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Ste\EndLevelScript.cs" Line="86" Column="42" />
-      <File FileName="Assets\Scripts\Ste\MovementScript.cs" Line="14" Column="2" />
+      <File FileName="Assets/Scripts/Ste/EndLevelScript.cs" Line="94" Column="9" />
+      <File FileName="Assets/Scripts/Chris/GravityFlip.cs" Line="31" Column="5" />
+      <File FileName="Assets/Scripts/Ste/MovementScript.cs" Line="42" Column="53" />
+      <File FileName="Assets/Scripts/Chris/LevelSelect.cs" Line="84" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

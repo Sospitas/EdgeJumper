@@ -53,7 +53,7 @@ public class EndLevelScript : MonoBehaviour
 				{
 					for(int i = 0; i < Input.touches.Length; i++)
 					{
-						if(Input.touches[i].position.x > moveScript.mobileMovementVal && Input.touches[i].position.x < Screen.width - moveScript.mobileMovementVal)
+						if(Input.touches[i].position.x > (Screen.width * moveScript.mobileMovementVal) && Input.touches[i].position.x < Screen.width - (Screen.width * moveScript.mobileMovementVal))
 						{
 							Application.LoadLevel (nextLevel);
 						}
@@ -89,7 +89,7 @@ public class EndLevelScript : MonoBehaviour
 			if(onMobile)
 			{
 				GUI.Label (new Rect( originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
-					"Touch The Middle Of The Screen\n To Continue ");
+					"Touch The Screen\n To Continue ");
 			}
 			else 
 			{

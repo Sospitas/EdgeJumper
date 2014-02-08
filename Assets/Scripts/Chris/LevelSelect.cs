@@ -49,6 +49,11 @@ public class LevelSelect : MonoBehaviour
 				Application.LoadLevel ("Level4");
 			}
 			
+			if(GUI.Button (new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Main Menu"))
+			{
+				Application.LoadLevel ("MainMenu");
+			}
+			
 			if(GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Next"))
 			{
 				// Show second set of levels
@@ -72,6 +77,11 @@ public class LevelSelect : MonoBehaviour
 			if(GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 7"))
 			{
 				Application.LoadLevel ("Level7");
+			}
+			
+			if(GUI.Button (new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Level 8"))
+			{
+				Application.LoadLevel ("Level8");
 			}
 			
 			if(GUI.Button(new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Main Menu"))
