@@ -53,7 +53,7 @@ public class EndLevelScript : MonoBehaviour
 				{
 					for(int i = 0; i < Input.touches.Length; i++)
 					{
-						if(Input.touches[i].position.x > 200 && Input.touches[i].position.x < Screen.width - 200)
+						if(Input.touches[i].position.x > moveScript.mobileMovementVal && Input.touches[i].position.x < Screen.width - moveScript.mobileMovementVal)
 						{
 							Application.LoadLevel (nextLevel);
 						}

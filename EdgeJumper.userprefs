@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ste/EndLevelScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Ste\EndLevelScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Ste/EndLevelScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Ste\EndLevelScript.cs" Line="86" Column="42" />
+      <File FileName="Assets\Scripts\Ste\MovementScript.cs" Line="14" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
