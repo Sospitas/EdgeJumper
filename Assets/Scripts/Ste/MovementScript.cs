@@ -19,7 +19,7 @@ public class MovementScript : MonoBehaviour
 	public float moveDampX;
 	public float mobileMovementVal;
 	public GameObject left, right;
-	public Material green, gray;
+	public Material green, gray;	
 	
 	private float distanceToGround, distanceToSides;
 	
@@ -40,17 +40,6 @@ public class MovementScript : MonoBehaviour
 		{
 			onMobile = true;
 		};
-		
-		if(!onMobile)
-		{
-			left.renderer.enabled = false;
-			right.renderer.enabled = false;
-		}
-		else
-		{
-			left.renderer.enabled = true;
-			right.renderer.enabled = true;
-		}
 		this.rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 		distanceToGround = this.collider.bounds.extents.y;
 		distanceToSides = this.collider.bounds.extents.x;
