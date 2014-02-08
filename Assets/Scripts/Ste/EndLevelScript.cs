@@ -42,11 +42,7 @@ public class EndLevelScript : MonoBehaviour
 		{
 			if(Input.GetKey (KeyCode.E))
 			{
-				//This doesn't work. 
-				if(moveScript.isGrounded(false) || moveScript.isGrounded(true))
-				{
-					Application.LoadLevel(nextLevel);
-				}
+				Application.LoadLevel(nextLevel);
 			}
 		}
 		else if(onMobile == true)
@@ -59,11 +55,7 @@ public class EndLevelScript : MonoBehaviour
 					{
 						if(Input.touches[i].position.x > 200 && Input.touches[i].position.x < Screen.width - 200)
 						{
-							//This doesn't work.
-							if(moveScript.isGrounded() || moveScript.isGrounded(true))
-							{
-								Application.LoadLevel (nextLevel);
-							}
+							Application.LoadLevel (nextLevel);
 						}
 					}	
 				}
