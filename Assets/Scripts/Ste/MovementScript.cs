@@ -11,15 +11,12 @@ public class MovementScript : MonoBehaviour
 	//jumpForce = 70
 	//moveDampX = 1
 	//mobileMovement = 0.35f
-	
-	
 	public float moveSpeed;
 	public float maxVel;
 	public float jumpForce;
 	public float moveDampX;
 	public float mobileMovementVal;
-	public GameObject left, right;
-	public Material green, gray;	
+	public Material green, gray;
 	
 	private float distanceToGround, distanceToSides;
 	
@@ -121,20 +118,16 @@ public class MovementScript : MonoBehaviour
 				//Move Left
 				if(Input.GetTouch(i).position.x < (Screen.width * mobileMovementVal) && !wallSlideLeft())
 				{
-					left.renderer.material = green;
-					right.renderer.material = gray;
 					leftMove = true;
 					rightMove = false;
 				}
 				// Move Right
 				else if(Input.GetTouch(i).position.x > Screen.width - (Screen.width * mobileMovementVal) && !wallSlideRight())
 				{
-					right.renderer.material = green;
-					left.renderer.material = gray;
 					rightMove = true; 
 					leftMove = false;
 				}
-				else if(Input.GetTouch(i).position.x < Screen.width - Screen.width * mobileMovementVal && Input.GetTouch(i).position.x > Screen.width * mobileMovementVal && isGrounded())
+				else if(Input.GetTouch(i).position.x < Screen.width - (Screen.width * mobileMovementVal) && Input.GetTouch(i).position.x > (Screen.width * mobileMovementVal) && isGrounded())
 				{
 					jump = true;
 				}
@@ -147,8 +140,6 @@ public class MovementScript : MonoBehaviour
 		//No movement input
 		else 
 		{
-			right.renderer.material = gray;
-			left.renderer.material = gray;
 			rightMove = leftMove = false;
 		}
 	}

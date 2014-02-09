@@ -88,13 +88,13 @@ public class EndLevelScript : MonoBehaviour
 			GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 			if(onMobile)
 			{
-				GUI.Label (new Rect( originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
-					"Touch The Screen\n To Continue ");
+				GUI.TextField (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
+					"Touch The Screen To Continue ");
 			}
 			else 
 			{
-				GUI.Label (new Rect( originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
-					"Press E To Continue\n To The Next Level");
+				GUI.TextField (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
+					"Press 'e' to continue\n to the next level");
 			}
 			GUI.matrix = originalMatrix;
 		}

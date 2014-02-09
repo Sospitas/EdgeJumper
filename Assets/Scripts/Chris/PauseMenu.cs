@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 	public float buttonHeight;
 	
 	public static bool isPaused = false;
+	public AudioClip buttonClick;
 	
 	private Vector3 scale;
 	private float originalWidth = 1920;
@@ -30,12 +31,14 @@ public class PauseMenu : MonoBehaviour
 			
 			if(GUI.Button (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.25f, buttonWidth, buttonHeight), "Resume"))
 			{
+				audio.PlayOneShot(buttonClick);
 				Time.timeScale = 1.0f;
 				isPaused = false;
 			}
 			
 			if(GUI.Button (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.50f, buttonWidth, buttonHeight), "Level Select"))
 			{
+				audio.PlayOneShot(buttonClick);
 				Time.timeScale = 1.0f;
 				isPaused = false;
 				Application.LoadLevel ("LevelSelect");
@@ -43,6 +46,10 @@ public class PauseMenu : MonoBehaviour
 			
 			if(GUI.Button (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.75f, buttonWidth, buttonHeight), "Main Menu"))
 			{
+				PlayerPrefs.SetInt("LastLevel", Application.loadedLevel);
+				PlayerPrefs.Save();
+				
+				audio.PlayOneShot(buttonClick);
 				Time.timeScale = 1.0f;
 				isPaused = false;
 				Application.LoadLevel ("MainMenu");

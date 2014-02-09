@@ -14,6 +14,8 @@ public class GravityFlip : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		moveScript = GameObject.Find ("PlayerCube").GetComponent<MovementScript>();
+		
 		if(moveScript != null)
 		{
 			hasMoveScript = true;
