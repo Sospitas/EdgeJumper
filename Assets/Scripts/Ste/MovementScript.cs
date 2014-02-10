@@ -11,6 +11,7 @@ public class MovementScript : MonoBehaviour
 	//jumpForce = 70
 	//moveDampX = 1
 	//mobileMovement = 0.35f
+	
 	public float moveSpeed;
 	public float maxVel;
 	public float jumpForce;
@@ -22,7 +23,7 @@ public class MovementScript : MonoBehaviour
 	
 	private bool rightMove = false;
 	private bool leftMove = false;
-	private bool jump = false;
+	//private bool jump = false;
 	
 	private bool leftGrounded = false;
 	private bool rightGrounded = false;
@@ -98,14 +99,14 @@ public class MovementScript : MonoBehaviour
 		}
 		
 		// Jumping
-		if(Input.GetKey (KeyCode.Space) && isGrounded())
-		{
-			jump = true;
-		}
-		else 
-		{
-			jump = false;	
-		}
+//		if(Input.GetKey (KeyCode.Space) && isGrounded())
+//		{
+//			jump = true;
+//		}
+//		else 
+//		{
+//			jump = false;	
+//		}
 	}
 	
 	void InputsMobile()
@@ -127,14 +128,14 @@ public class MovementScript : MonoBehaviour
 					rightMove = true; 
 					leftMove = false;
 				}
-				else if(Input.GetTouch(i).position.x < Screen.width - (Screen.width * mobileMovementVal) && Input.GetTouch(i).position.x > (Screen.width * mobileMovementVal) && isGrounded())
-				{
-					jump = true;
-				}
-				else 
-				{
-					jump = false;	
-				}
+//				else if(Input.GetTouch(i).position.x < Screen.width - (Screen.width * mobileMovementVal) && Input.GetTouch(i).position.x > (Screen.width * mobileMovementVal) && isGrounded())
+//				{
+//					jump = true;
+//				}
+//				else 
+//				{
+//					jump = false;	
+//				}
 			}
 		}
 		//No movement input
@@ -160,11 +161,11 @@ public class MovementScript : MonoBehaviour
 			this.rigidbody.velocity = Vector3.Lerp(this.rigidbody.velocity, new Vector3(0.0f, this.rigidbody.velocity.y, 0.0f), moveDampX);
 		}
 		
-		if(jump)
-		{
-			this.rigidbody.AddForce(0.0f, jumpForce, 0.0f);
-			jump = false;
-		}
+//		if(jump)
+//		{
+//			this.rigidbody.AddForce(0.0f, jumpForce, 0.0f);
+//			jump = false;
+//		}
 	}
 	
 	//Use a raycast to check if the player is grounded.
