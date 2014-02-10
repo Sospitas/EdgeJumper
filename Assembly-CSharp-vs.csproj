@@ -114,6 +114,7 @@
      <Compile Include="Assets\Fantasy-Colorable\ThirdParty\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\Fantasy-Colorable\ThirdParty\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\Scripts\Chris\GravityFlip.cs" />
+     <Compile Include="Assets\Scripts\Chris\GravityTutorial.cs" />
      <Compile Include="Assets\Scripts\Chris\InputScript.cs" />
      <Compile Include="Assets\Scripts\Chris\LevelSelect.cs" />
      <Compile Include="Assets\Scripts\Chris\MainMenu.cs" />
@@ -122,6 +123,7 @@
      <Compile Include="Assets\Scripts\Ste\EndLevelScript.cs" />
      <Compile Include="Assets\Scripts\Ste\FallDeathScript.cs" />
      <Compile Include="Assets\Scripts\Ste\MovementScript.cs" />
+     <Compile Include="Assets\Scripts\Ste\MovementTutorial.cs" />
      <Compile Include="Assets\Scripts\Ste\Spikes.cs" />
      <None Include="Assets\Fantasy-Colorable\ThirdParty\NGUI\Resources\Shaders\Depth.shader" />
      <None Include="Assets\Fantasy-Colorable\ThirdParty\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
