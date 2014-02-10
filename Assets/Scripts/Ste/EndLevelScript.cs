@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 //Steven Brown
 public class EndLevelScript : MonoBehaviour 
 {
@@ -10,8 +9,6 @@ public class EndLevelScript : MonoBehaviour
 	public GUISkin guiskin;
 	public float buttonWidth;
 	public float buttonHeight;
-	
-	
 	
 	public MovementScript moveScript;
 	

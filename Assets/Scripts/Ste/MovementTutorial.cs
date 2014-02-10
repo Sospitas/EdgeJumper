@@ -30,7 +30,7 @@ public class MovementTutorial : MonoBehaviour
 			originalHeight = 1536;
 		}
 	}
-	void OnTriggerStay()
+	void OnTriggerEnter()
 	{
 		if(this.tag == "MoveRight")
 		{
