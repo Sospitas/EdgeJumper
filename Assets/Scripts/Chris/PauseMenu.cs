@@ -14,6 +14,15 @@ public class PauseMenu : MonoBehaviour
 	private float originalWidth = 1920;
 	private float originalHeight = 1080;
 	
+	void Start()
+	{
+		if(Application.platform == RuntimePlatform.IPhonePlayer)
+		{
+			originalWidth = 1024;
+			originalHeight = 768;
+		}
+	}
+	
 	void OnGUI ()
 	{
 		if(isPaused == true)

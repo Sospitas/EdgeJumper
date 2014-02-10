@@ -10,8 +10,17 @@ public class MainMenu : MonoBehaviour
 	public AudioClip buttonClick;
 	
 	private Vector3 scale;
-	private float originalWidth = 1920;
-	private float originalHeight = 1080;
+	private float originalWidth;
+	private float originalHeight;
+	
+	void Start()
+	{
+		if(Application.platform == RuntimePlatform.IPhonePlayer)
+		{
+			originalWidth = 1024;
+			originalHeight = 768;
+		}
+	}
 	
 	// GUI
 	void OnGUI()

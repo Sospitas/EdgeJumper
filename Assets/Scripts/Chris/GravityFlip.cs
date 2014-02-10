@@ -9,8 +9,6 @@ public class GravityFlip : MonoBehaviour
 	
 	private bool hasMoveScript = false;
 	
-	private Vector3 groundDir = Vector3.down;
-	
 	// Use this for initialization
 	void Start ()
 	{
@@ -31,12 +29,10 @@ public class GravityFlip : MonoBehaviour
 			
 			if(flipped == true)
 			{
-				groundDir = Vector3.up;
 				Physics.gravity = new Vector3(0, 9.81f, 0);
 			}
 			else
 			{
-				groundDir = Vector3.down;
 				Physics.gravity = new Vector3(0, -9.81f, 0);
 			}
 		}

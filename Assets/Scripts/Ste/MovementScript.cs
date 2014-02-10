@@ -34,10 +34,10 @@ public class MovementScript : MonoBehaviour
 	void Start ()
 	{
 		Physics.gravity = new Vector3(0, -9.81f, 0);
-		if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.OSXPlayer)
+		if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
 		{
 			onMobile = true;
-		};
+		}
 		this.rigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
 		distanceToGround = this.collider.bounds.extents.y;
 		distanceToSides = this.collider.bounds.extents.x;

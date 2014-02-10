@@ -22,9 +22,15 @@ public class EndLevelScript : MonoBehaviour
 	
 	void Start()
 	{
-		if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.OSXPlayer)
+		if(Application.platform == RuntimePlatform.Android)
 		{
 			onMobile = true;
+		}
+		else if(Application.platform == RuntimePlatform.IPhonePlayer)
+		{
+			onMobile = true;
+			originalWidth = 1024;
+			originalHeight = 768;
 		}
 	}
 	
@@ -88,13 +94,13 @@ public class EndLevelScript : MonoBehaviour
 			GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 			if(onMobile)
 			{
-				GUI.TextField (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
-					"Touch The Screen To Continue ");
+				GUI.Label (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
+					"Touch The Screen \nTo Continue ");
 			}
 			else 
 			{
-				GUI.TextField (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
-					"Press 'e' to continue\n to the next level");
+				GUI.Label (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
+					"Press 'e' to continue \nto the next level");
 			}
 			GUI.matrix = originalMatrix;
 		}

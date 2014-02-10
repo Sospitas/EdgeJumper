@@ -23,6 +23,15 @@ public class LevelSelect : MonoBehaviour
 	
 	private LevelsPage levels = LevelsPage.LEVELS_FIRST;
 	
+	void Start()
+	{
+		if(Application.platform == RuntimePlatform.IPhonePlayer)
+		{
+			originalWidth = 1024;
+			originalHeight = 768;
+		}
+	}
+	
 	void OnGUI ()
 	{
 		GUI.skin = guiskin;

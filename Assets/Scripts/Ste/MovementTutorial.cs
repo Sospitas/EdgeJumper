@@ -17,10 +17,16 @@ public class MovementTutorial : MonoBehaviour
 	
 	void Start()
 	{
-		if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.OSXPlayer)
+		if(Application.platform == RuntimePlatform.Android)
 		{
 			onMobile = true;
-		}	
+		}
+		else if(Application.platform == RuntimePlatform.IPhonePlayer)
+		{
+			onMobile = true;
+			originalWidth = 1024;
+			originalHeight = 768;
+		}
 	}
 	void OnTriggerStay()
 	{
