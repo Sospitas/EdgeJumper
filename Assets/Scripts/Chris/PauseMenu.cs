@@ -16,6 +16,8 @@ public class PauseMenu : MonoBehaviour
 	
 	void Start()
 	{
+		useGUILayout = false;
+		
 		if(Application.platform == RuntimePlatform.IPhonePlayer)
 		{
 			originalWidth = 1024;

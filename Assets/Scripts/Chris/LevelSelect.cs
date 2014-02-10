@@ -25,6 +25,8 @@ public class LevelSelect : MonoBehaviour
 	
 	void Start()
 	{
+		useGUILayout = false;
+		
 		if(Application.platform == RuntimePlatform.IPhonePlayer)
 		{
 			originalWidth = 1024;

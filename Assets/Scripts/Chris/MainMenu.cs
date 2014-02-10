@@ -15,11 +15,18 @@ public class MainMenu : MonoBehaviour
 	
 	void Start()
 	{
+		useGUILayout = false;
+		
 		if(Application.platform == RuntimePlatform.IPhonePlayer)
 		{
 			originalWidth = 1024;
 			originalHeight = 768;
 		}
+		else
+		{
+			originalWidth = 1920;
+			originalHeight = 1080;
+		};
 	}
 	
 	// GUI

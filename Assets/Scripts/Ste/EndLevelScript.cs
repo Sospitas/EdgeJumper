@@ -11,6 +11,8 @@ public class EndLevelScript : MonoBehaviour
 	public float buttonWidth;
 	public float buttonHeight;
 	
+	
+	
 	public MovementScript moveScript;
 	
 	private Vector3 scale;
@@ -22,6 +24,8 @@ public class EndLevelScript : MonoBehaviour
 	
 	void Start()
 	{
+		useGUILayout = false;
+		
 		if(Application.platform == RuntimePlatform.Android)
 		{
 			onMobile = true;
@@ -29,8 +33,13 @@ public class EndLevelScript : MonoBehaviour
 		else if(Application.platform == RuntimePlatform.IPhonePlayer)
 		{
 			onMobile = true;
-			originalWidth = 1024;
-			originalHeight = 768;
+			originalWidth = 2048;
+			originalHeight = 1536;
+		}
+		else
+		{
+			originalWidth = 1920;
+			originalHeight = 1080;
 		}
 	}
 	

@@ -17,6 +17,8 @@ public class GravityTutorial : MonoBehaviour
 	
 	void Start()
 	{
+		useGUILayout = false;
+		
 		if(Application.platform == RuntimePlatform.Android)
 		{
 			onMobile = true;
@@ -24,8 +26,8 @@ public class GravityTutorial : MonoBehaviour
 		else if(Application.platform == RuntimePlatform.IPhonePlayer)
 		{
 			onMobile = true;
-			originalWidth = 1024;
-			originalHeight = 768;
+			originalWidth = 2048;
+			originalHeight = 1536;
 		}
 	}
 	

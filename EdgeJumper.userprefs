@@ -1,16 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Chris/GravityFlip.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ste/EndLevelScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Chris/MainMenu.cs" Line="18" Column="3" />
-      <File FileName="Assets/Scripts/Ste/EndLevelScript.cs" Line="25" Column="3" />
-      <File FileName="Assets/Scripts/Chris/PauseMenu.cs" Line="22" Column="25" />
-      <File FileName="Assets/Scripts/Chris/LevelSelect.cs" Line="31" Column="25" />
-      <File FileName="Assets/Scripts/Chris/GravityTutorial.cs" Line="29" Column="4" />
-      <File FileName="Assets/Scripts/Ste/MovementScript.cs" Line="40" Column="4" />
-      <File FileName="Assets/Scripts/Ste/MovementTutorial.cs" Line="29" Column="4" />
+      <File FileName="Assets/Scripts/Chris/MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Ste/EndLevelScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Chris/PauseMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Chris/LevelSelect.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Chris/GravityTutorial.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Ste/MovementScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Ste/MovementTutorial.cs" Line="24" Column="64" />
       <File FileName="Assets/Scripts/Ste/Spikes.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Chris/GravityFlip.cs" Line="50" Column="36" />
+      <File FileName="Assets/Scripts/Chris/GravityFlip.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
