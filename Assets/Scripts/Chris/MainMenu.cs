@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
 		}
 		else
 		{
-			GUI.Label (new Rect(originalWidth/2 - buttonWidth/2, 0 + (int)(originalHeight * 0.4f), buttonWidth, buttonHeight), "Resume");
+			GUI.Button (new Rect(originalWidth/2 - buttonWidth/2, 0 + (int)(originalHeight * 0.4f), buttonWidth, buttonHeight), "Resume");
 		}
 		
 		if(GUI.Button (new Rect(originalWidth/2 - buttonWidth/2, 0 + (int)(originalHeight * 0.6f), buttonWidth, buttonHeight), "Level Select"))

@@ -1,15 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Chris\LevelSelect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Chris/MainMenu.cs">
     <Files>
-      <File FileName="Assets\Scripts\Ste\MovementScript.cs" Line="37" Column="1" />
-      <File FileName="Assets\Scripts\Chris\MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Ste\EndLevelScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Chris\GravityFlip.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Chris\PauseMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Chris\GravityTutorial.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Ste\MovementTutorial.cs" Line="57" Column="3" />
-      <File FileName="Assets\Scripts\Chris\LevelSelect.cs" Line="60" Column="126" />
+      <File FileName="Assets/Scripts/Chris/MainMenu.cs" Line="46" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
