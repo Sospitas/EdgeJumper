@@ -39,24 +39,26 @@ public class GravityFlip : MonoBehaviour
 	}
 	
 	void Inputs ()
-	{		
-		if(Input.GetKeyDown (KeyCode.Space))
+	{
+		if(PauseMenu.isPaused == false)
 		{
-			if(moveScript.isGrounded(flipped))
+			if(Input.GetKeyDown (KeyCode.Space))
 			{
-				flipped = !flipped;
-			}
-		}
-		else if(Input.touches.Length > 0)
-		{
-			for(int i = 0; i < Input.touches.Length; i++)
-			{
-				if(Input.GetTouch(i).position.x < Screen.width - 150 && Input.GetTouch(i).position.x > 150 && moveScript.isGrounded(flipped))
+				if(moveScript.isGrounded(flipped))
 				{
 					flipped = !flipped;
 				}
 			}
-		}	
-
+			else if(Input.touches.Length > 0)
+			{
+				for(int i = 0; i < Input.touches.Length; i++)
+				{
+					if(Input.GetTouch(i).position.x < Screen.width - (Screen.width * moveScript.mobileMovementVal) && Input.GetTouch(i).position.x > (Screen.width * moveScript.mobileMovementVal) && moveScript.isGrounded(flipped))
+					{
+						flipped = !flipped;
+					}
+				}
+			}
+		}
 	}
 }
