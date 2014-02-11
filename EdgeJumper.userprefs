@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Chris\GravityTutorial.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Chris\GravityFlip.cs">
     <Files>
       <File FileName="Assets\Scripts\Chris\GravityTutorial.cs" Line="78" Column="50" />
       <File FileName="Assets\Scripts\Chris\MainMenu.cs" Line="1" Column="1" />
@@ -8,7 +8,8 @@
       <File FileName="Assets\Scripts\Ste\EndLevelScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Chris\PauseMenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Ste\MovementTutorial.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Ste\MovementScript.cs" Line="131" Column="110" />
+      <File FileName="Assets\Scripts\Ste\MovementScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Chris\GravityFlip.cs" Line="52" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

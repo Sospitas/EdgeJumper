@@ -51,7 +51,7 @@ public class GravityFlip : MonoBehaviour
 		{
 			for(int i = 0; i < Input.touches.Length; i++)
 			{
-				if(Input.GetTouch(i).position.x < Screen.width - 200 && Input.GetTouch(i).position.x > 200 && moveScript.isGrounded(flipped))
+				if(Input.GetTouch(i).position.x < Screen.width - 150 && Input.GetTouch(i).position.x > 150 && moveScript.isGrounded(flipped))
 				{
 					flipped = !flipped;
 				}
