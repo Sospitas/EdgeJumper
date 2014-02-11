@@ -86,29 +86,32 @@ public class EndLevelScript : MonoBehaviour
 	
 	void OnGUI()
 	{
-		if(inTrigger == true)
+		if(PauseMenu.isPaused == false)
 		{
-			GUI.skin = guiskin;
+			if(inTrigger == true)
+			{
+				GUI.skin = guiskin;
+					
+				scale.x = Screen.width/originalWidth;
+				scale.y = Screen.height/originalHeight;
+				scale.z = 1;
 				
-			scale.x = Screen.width/originalWidth;
-			scale.y = Screen.height/originalHeight;
-			scale.z = 1;
-			
-			// Save the original matrix
-			Matrix4x4 originalMatrix = GUI.matrix;
-			
-			GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
-			if(onMobile)
-			{
-				GUI.Label (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
-					"Touch The Screen \nTo Continue ");
+				// Save the original matrix
+				Matrix4x4 originalMatrix = GUI.matrix;
+				
+				GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
+				if(onMobile)
+				{
+					GUI.Label (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
+						"Touch The Screen \nTo Continue ");
+				}
+				else 
+				{
+					GUI.Label (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
+						"Press 'e' to continue \nto the next level");
+				}
+				GUI.matrix = originalMatrix;
 			}
-			else 
-			{
-				GUI.Label (new Rect( originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight), 
-					"Press 'e' to continue \nto the next level");
-			}
-			GUI.matrix = originalMatrix;
 		}
 	}
 }

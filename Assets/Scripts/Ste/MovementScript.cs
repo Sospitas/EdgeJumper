@@ -122,11 +122,20 @@ public class MovementScript : MonoBehaviour
 					leftMove = true;
 					rightMove = false;
 				}
-				// Move Right
-				else if(Input.GetTouch(i).position.x > Screen.width - (Screen.width * mobileMovementVal) && !wallSlideRight())
+				else if(wallSlideLeft() == true)
 				{
-					rightMove = true; 
 					leftMove = false;
+				}
+				
+				// Move Right
+				if(Input.GetTouch(i).position.x > Screen.width - (Screen.width * mobileMovementVal) && !wallSlideRight())
+				{
+					rightMove = true;
+					leftMove = false;
+				}
+				else if(wallSlideRight() == true)
+				{
+					rightMove = false;
 				}
 //				else if(Input.GetTouch(i).position.x < Screen.width - (Screen.width * mobileMovementVal) && Input.GetTouch(i).position.x > (Screen.width * mobileMovementVal) && isGrounded())
 //				{
@@ -220,7 +229,7 @@ public class MovementScript : MonoBehaviour
 	
 	//Check if the player is wall sliding on the left side. This will stop the movement Velocity in this 
 	//Direction.
-	bool wallSlideLeft()
+	public bool wallSlideLeft()
 	{
 		if(Physics.Raycast(this.transform.position, Vector3.left, distanceToSides + 0.05f))
 		{
@@ -244,7 +253,7 @@ public class MovementScript : MonoBehaviour
 	
 	//Check if the player is wall sliding on the right side. This will stop the movement velocity in this
 	//Direction.
-	bool wallSlideRight()
+	public bool wallSlideRight()
 	{
 		if(Physics.Raycast(this.transform.position, Vector3.right, distanceToSides + 0.05f))
 		{

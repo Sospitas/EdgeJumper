@@ -49,34 +49,37 @@ public class GravityTutorial : MonoBehaviour
 	
 	void OnGUI()
 	{
-		GUI.skin = guiskin;
+		if(PauseMenu.isPaused == false)
+		{
+			GUI.skin = guiskin;
+				
+			scale.x = Screen.width/originalWidth;
+			scale.y = Screen.height/originalHeight;
+			scale.z = 1;
 			
-		scale.x = Screen.width/originalWidth;
-		scale.y = Screen.height/originalHeight;
-		scale.z = 1;
-		
-		// Save the original matrix
-		Matrix4x4 originalMatrix = GUI.matrix;
-		
-		GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
-		
-		if(onMobile == true)
-		{
-			if(inTrigger == false)
+			// Save the original matrix
+			Matrix4x4 originalMatrix = GUI.matrix;
+			
+			GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
+			
+			if(onMobile == true)
 			{
-				GUI.Label(new Rect(originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight),
-					"Tapping the screen \nwill flip gravity!");	
+				if(inTrigger == false)
+				{
+					GUI.Label(new Rect(originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight),
+						"Tapping the screen \nwill flip gravity!");	
+				}
 			}
-		}
-		else
-		{
-			if(inTrigger == false)
+			else
 			{
-				GUI.Label(new Rect(originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight),
-					"Pressing space \nwill flip gravity!");
+				if(inTrigger == false)
+				{
+					GUI.Label(new Rect(originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight),
+						"Pressing space \nwill flip gravity!");
+				}
 			}
+			
+			GUI.matrix = originalMatrix;
 		}
-		
-		GUI.matrix = originalMatrix;
 	}
 }
