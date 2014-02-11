@@ -5,8 +5,6 @@ enum LevelsPage
 {
 	LEVELS_FIRST = 0,
 	LEVELS_SECOND,
-	LEVELS_THIRD,
-	LEVELS_FOURTH,
 	NUM_LEVELS_PAGES,
 }
 
@@ -15,6 +13,12 @@ public class LevelSelect : MonoBehaviour
 	public GUISkin guiskin;
 	public float buttonWidth;
 	public float buttonHeight;
+	
+	public float centreButtonOffsetX;
+	public float centreButtonOffsetY;
+	
+	public float buttonOffset;
+	
 	public AudioClip buttonClick;
 	
 	private Vector3 scale;
@@ -47,138 +51,74 @@ public class LevelSelect : MonoBehaviour
 		
 		GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 		
-		// First Levels Selection Buttons
+		if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2 - 75, 0 + (int)(originalHeight * 0.75f), 300, buttonHeight), "Back"))
+		{
+			Application.LoadLevel ("MainMenu");
+		}
+		
+		if(levels > 0)
+		{
+			// Previous (does nothing on first page)
+			if(GUI.Button (new Rect(originalWidth * 0.4f - buttonWidth/2, 0 + (int)(originalHeight * 0.45f), 100, 100), "<"))
+			{
+				--levels;
+			}
+		}
+			
+		if(levels < LevelsPage.NUM_LEVELS_PAGES - 1)
+		{
+			// Next
+			if(GUI.Button (new Rect(originalWidth * 0.8f - buttonWidth/2, 0 + (int)(originalHeight * 0.45f), 100, 100), ">"))
+			{
+				++levels;
+			}
+		}
+		
 		if(levels == LevelsPage.LEVELS_FIRST)
 		{
-			if(GUI.Button(new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 1"))
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "1"))
 			{
-				//audio.PlayOneShot(buttonClick);
 				Application.LoadLevel ("Level1");
 			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 2"))
+			if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "2"))
 			{
-				//audio.PlayOneShot(buttonClick);
 				Application.LoadLevel ("Level2");
 			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 3"))
+			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "3"))
 			{
-				//audio.PlayOneShot(buttonClick);
 				Application.LoadLevel ("Level3");
 			}
-			
-			GUI.Button(new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Previous");
-			
-			if(GUI.Button (new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Main Menu"))
+			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "4"))
 			{
-				//audio.PlayOneShot(buttonClick);
-				Application.LoadLevel ("MainMenu");
-			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Next"))
-			{
-				//audio.PlayOneShot(buttonClick);
-				// Show second set of levels
-				levels = LevelsPage.LEVELS_SECOND;
-			}
-		}
-		
-		// SECOND Level Selection Buttons
-		if(levels == LevelsPage.LEVELS_SECOND)
-		{
-			if(GUI.Button(new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 4"))
-			{
-				//audio.PlayOneShot(buttonClick);
 				Application.LoadLevel ("Level4");
 			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 5"))
+			else if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "5"))
 			{
-				//audio.PlayOneShot(buttonClick);
 				Application.LoadLevel ("Level5");
 			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 6"))
+			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "6"))
 			{
-				//audio.PlayOneShot(buttonClick);
 				Application.LoadLevel ("Level6");
 			}
-			
-			if(GUI.Button (new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Previous"))
+			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "7"))
 			{
-				levels = LevelsPage.LEVELS_FIRST;
+				Application.LoadLevel ("Level7");
 			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Main Menu"))
+			else if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "8"))
 			{
-				//audio.PlayOneShot(buttonClick);
-				Application.LoadLevel ("MainMenu");
-			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Next"))
-			{
-				levels = LevelsPage.LEVELS_THIRD;
-			}
-		}
-		
-		// THIRD Level Selection Page
-		if(levels == LevelsPage.LEVELS_THIRD)
-		{
-			if(GUI.Button(new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 7"))
-			{
-				Application.LoadLevel("Level7");
-			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 8"))
-			{
-				//audio.PlayOneShot(buttonClick);
 				Application.LoadLevel ("Level8");
 			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 9"))
+			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "9"))
 			{
-				//audio.PlayOneShot(buttonClick);
 				Application.LoadLevel ("Level9");
 			}
-			
-			if(GUI.Button (new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Previous"))
-			{
-				levels = LevelsPage.LEVELS_SECOND;
-			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Main Menu"))
-			{
-				//audio.PlayOneShot(buttonClick);
-				Application.LoadLevel ("MainMenu");
-			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Next"))
-			{
-				levels = LevelsPage.LEVELS_FOURTH;
-			}
 		}
-		
-		// FOURTH Level Selection Page
-		if(levels == LevelsPage.LEVELS_FOURTH)
+		else if(levels == LevelsPage.LEVELS_SECOND)
 		{
-			if(GUI.Button(new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.33f, buttonWidth, buttonHeight), "Level 10"))
+			if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * 0.45f), buttonWidth, buttonHeight), "10"))
 			{
-				Application.LoadLevel("Level10");
+				Application.LoadLevel ("Level10");
 			}
-			
-			if(GUI.Button (new Rect(originalWidth * 0.25f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Previous"))
-			{
-				levels = LevelsPage.LEVELS_THIRD;
-			}
-			
-			if(GUI.Button(new Rect(originalWidth * 0.50f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Main Menu"))
-			{
-				//audio.PlayOneShot(buttonClick);
-				Application.LoadLevel ("MainMenu");
-			}
-			
-			GUI.Button(new Rect(originalWidth * 0.75f - buttonWidth/2, originalHeight * 0.66f, buttonWidth, buttonHeight), "Next");
 		}
 		
 		GUI.matrix = originalMatrix;

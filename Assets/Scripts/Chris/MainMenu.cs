@@ -7,6 +7,11 @@ public class MainMenu : MonoBehaviour
 	public float buttonWidth;
 	public float buttonHeight;
 	
+	
+	// Amount the originalWidth is to be multiplied by
+	// (Between 0 and 1)
+	public float buttonOffset;
+	
 	public AudioClip buttonClick;
 	
 	private Vector3 scale;
@@ -43,33 +48,21 @@ public class MainMenu : MonoBehaviour
 		
 		GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 		
-		if(GUI.Button (new Rect(originalWidth/2 - buttonWidth/2, 0 + (int)(originalHeight * 0.2f), buttonWidth, buttonHeight), "Play"))
+		if(GUI.Button (new Rect(originalWidth * buttonOffset - buttonWidth/2, 0 + (int)(originalHeight * 0.35f), buttonWidth, buttonHeight), "Play"))
 		{
 			audio.PlayOneShot(buttonClick);
 			// Load Game Level
 			Application.LoadLevel ("Level1");
 		}
 		
-		if(PlayerPrefs.HasKey ("LastLevel"))
-		{
-			if(GUI.Button (new Rect(originalWidth/2 - buttonWidth/2, 0 + (int)(originalHeight * 0.4f), buttonWidth, buttonHeight), "Resume"))
-			{
-				Application.LoadLevel(PlayerPrefs.GetInt("LastLevel"));
-			}
-		}
-		else
-		{
-			GUI.Button (new Rect(originalWidth/2 - buttonWidth/2, 0 + (int)(originalHeight * 0.4f), buttonWidth, buttonHeight), "Resume");
-		}
-		
-		if(GUI.Button (new Rect(originalWidth/2 - buttonWidth/2, 0 + (int)(originalHeight * 0.6f), buttonWidth, buttonHeight), "Level Select"))
+		if(GUI.Button (new Rect(originalWidth * buttonOffset - buttonWidth/2, 0 + (int)(originalHeight * 0.45f), buttonWidth, buttonHeight), "Level Select"))
 		{
 			audio.PlayOneShot(buttonClick);
 			// Load Level Select Scene
 			Application.LoadLevel ("LevelSelect");
 		}
 		
-		if(GUI.Button (new Rect(originalWidth/2 - buttonWidth/2, 0 + (int)(originalHeight * 0.8), buttonWidth, buttonHeight), "Quit"))
+		if(GUI.Button (new Rect(originalWidth * buttonOffset - buttonWidth/2, 0 + (int)(originalHeight * 0.55f), buttonWidth, buttonHeight), "Quit"))
 		{
 			audio.PlayOneShot(buttonClick);
 			// Quit The Game (Only works when actually running

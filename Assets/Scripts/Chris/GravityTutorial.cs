@@ -64,7 +64,7 @@ public class GravityTutorial : MonoBehaviour
 		{
 			if(inTrigger == false)
 			{
-				GUI.TextField(new Rect(originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight),
+				GUI.Label(new Rect(originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight),
 					"Tapping the screen \nwill flip gravity!");	
 			}
 		}
@@ -72,7 +72,7 @@ public class GravityTutorial : MonoBehaviour
 		{
 			if(inTrigger == false)
 			{
-				GUI.TextField(new Rect(originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight),
+				GUI.Label(new Rect(originalWidth/2 - buttonWidth/2, originalHeight * 0.1f, buttonWidth, buttonHeight),
 					"Pressing space \nwill flip gravity!");
 			}
 		}
