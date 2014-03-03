@@ -54,6 +54,7 @@ public class EndLevelScript : MonoBehaviour
 		{
 			if(Input.GetKey (KeyCode.E))
 			{
+				PlayerPrefsX.SetBool(nextLevel.Remove(0, 5), true);
 				Application.LoadLevel(nextLevel);
 			}
 		}
@@ -67,6 +68,7 @@ public class EndLevelScript : MonoBehaviour
 					{
 						if(Input.touches[i].position.x > (Screen.width * moveScript.mobileMovementVal) && Input.touches[i].position.x < Screen.width - (Screen.width * moveScript.mobileMovementVal))
 						{
+							PlayerPrefsX.SetBool(nextLevel.Remove(0, 5), true);
 							Application.LoadLevel (nextLevel);
 						}
 					}	

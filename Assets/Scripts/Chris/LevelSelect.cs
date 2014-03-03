@@ -10,6 +10,8 @@ enum LevelsPage
 
 public class LevelSelect : MonoBehaviour
 {
+	public int numberOfLevels;
+	
 	public GUISkin guiskin;
 	public float buttonWidth;
 	public float buttonHeight;
@@ -75,51 +77,107 @@ public class LevelSelect : MonoBehaviour
 		}
 		
 		if(levels == LevelsPage.LEVELS_FIRST)
-		{
+		{			
+			GUI.enabled = PlayerPrefsX.GetBool("1");
 			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "1"))
 			{
 				Application.LoadLevel ("Level1");
 			}
+			
+			GUI.enabled = PlayerPrefsX.GetBool("2");
 			if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "2"))
 			{
 				Application.LoadLevel ("Level2");
 			}
-			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "3"))
+			
+			GUI.enabled = PlayerPrefsX.GetBool("3");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "3"))
 			{
 				Application.LoadLevel ("Level3");
 			}
-			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "4"))
+			
+			GUI.enabled = PlayerPrefsX.GetBool("4");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "4"))
 			{
 				Application.LoadLevel ("Level4");
 			}
-			else if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "5"))
+			
+			GUI.enabled = PlayerPrefsX.GetBool("5");
+			if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "5"))
 			{
 				Application.LoadLevel ("Level5");
 			}
-			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "6"))
+			
+			GUI.enabled = PlayerPrefsX.GetBool("6");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "6"))
 			{
 				Application.LoadLevel ("Level6");
 			}
-			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "7"))
+			
+			GUI.enabled = PlayerPrefsX.GetBool("7");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "7"))
 			{
 				Application.LoadLevel ("Level7");
 			}
-			else if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "8"))
+			
+			GUI.enabled = PlayerPrefsX.GetBool("8");
+			if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "8"))
 			{
 				Application.LoadLevel ("Level8");
 			}
-			else if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "9"))
+			
+			GUI.enabled = PlayerPrefsX.GetBool("9");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "9"))
 			{
 				Application.LoadLevel ("Level9");
 			}
 		}
 		else if(levels == LevelsPage.LEVELS_SECOND)
 		{
-			if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * 0.45f), buttonWidth, buttonHeight), "10"))
+			GUI.enabled = PlayerPrefsX.GetBool("10");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "10"))
 			{
 				Application.LoadLevel ("Level10");
 			}
+			
+			GUI.enabled = PlayerPrefsX.GetBool("11");
+			if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "11"))
+			{
+				Application.LoadLevel ("Level11");
+			}
+			
+			GUI.enabled = PlayerPrefsX.GetBool("12");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY - 0.15f)), buttonWidth, buttonHeight), "12"))
+			{
+				Application.LoadLevel ("Level12");
+			}
+			
+			GUI.enabled = PlayerPrefsX.GetBool("13");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "13"))
+			{
+				Application.LoadLevel ("Level13");
+			}
+			
+			GUI.enabled = PlayerPrefsX.GetBool("14");
+			if(GUI.Button (new Rect(originalWidth * centreButtonOffsetX - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "14"))
+			{
+				Application.LoadLevel ("Level14");
+			}
+			
+			GUI.enabled = PlayerPrefsX.GetBool("15");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX + 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * centreButtonOffsetY), buttonWidth, buttonHeight), "15"))
+			{
+				Application.LoadLevel ("Level15");
+			}
+			
+			GUI.enabled = PlayerPrefsX.GetBool("16");
+			if(GUI.Button (new Rect(originalWidth * (centreButtonOffsetX - 0.1f) - buttonWidth/2, 0 + (int)(originalHeight * (centreButtonOffsetY + 0.15f)), buttonWidth, buttonHeight), "16"))
+			{
+				Application.LoadLevel ("Level16");
+			}
 		}
+		
+		GUI.enabled = true;
 		
 		GUI.matrix = originalMatrix;
 	}

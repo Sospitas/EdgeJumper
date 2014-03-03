@@ -37,20 +37,22 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity 4.2.1f4/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity 4.2.1f4/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Chris\GravityFlip.cs" />
      <Compile Include="Assets\Scripts\Chris\GravityTutorial.cs" />
+     <Compile Include="Assets\Scripts\Chris\InitialLevelLock.cs" />
      <Compile Include="Assets\Scripts\Chris\InputScript.cs" />
      <Compile Include="Assets\Scripts\Chris\LevelSelect.cs" />
      <Compile Include="Assets\Scripts\Chris\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Chris\OrientationScript.cs" />
      <Compile Include="Assets\Scripts\Chris\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Chris\PlayerPrefsX.cs" />
      <Compile Include="Assets\Scripts\Ste\BorderScript.cs" />
      <Compile Include="Assets\Scripts\Ste\EndLevelScript.cs" />
      <Compile Include="Assets\Scripts\Ste\FallDeathScript.cs" />
