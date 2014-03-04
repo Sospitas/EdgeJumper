@@ -12,10 +12,9 @@ public class FollowTrackPointsScript : MonoBehaviour
 	private float nextCall;
 	private bool xEqual, yEqual;
 	
-	private bool rotateOverTime = false;
 	private Vector3 targetPos;
 	
-	private Quaternion targetRot;
+	//private Quaternion targetRot;
 	// Use this for initialization
 	void Start () 
 	{
@@ -42,7 +41,6 @@ public class FollowTrackPointsScript : MonoBehaviour
 	
 	void MoveToNextTrackPoint()
 	{
-		rotateOverTime = false;
 		
 		if(currTrackPoint < trackPoints.Length)
 		{
@@ -75,10 +73,9 @@ public class FollowTrackPointsScript : MonoBehaviour
 				currTrackPoint++;
 				nextCall = Time.time + movePause;
 				
-				targetRot = Quaternion.Euler (this.transform.rotation.eulerAngles + new Vector3(0, 0, 90));
+				//targetRot = Quaternion.Euler (this.transform.rotation.eulerAngles + new Vector3(0, 0, 90));
 				
 				xEqual = yEqual = false;
-				rotateOverTime = true;
 			}	
 		}
 		else 

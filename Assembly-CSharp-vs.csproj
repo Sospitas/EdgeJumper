@@ -37,10 +37,10 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity 4.2.1f4/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity 4.2.1f4/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Ste\MovementScript.cs" />
      <Compile Include="Assets\Scripts\Ste\MovementTutorial.cs" />
      <Compile Include="Assets\Scripts\Ste\MovingTransformScript.cs" />
+     <Compile Include="Assets\Scripts\Ste\ParentScript.cs" />
      <Compile Include="Assets\Scripts\Ste\ParentToObjectScript.cs" />
      <Compile Include="Assets\Scripts\Ste\Spikes.cs" />
      <None Include="Assets\Data\completedLevels.txt" />

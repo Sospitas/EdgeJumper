@@ -1,14 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Chris\LevelSelect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Ste\EndLevelScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Ste\ParentToObjectScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Ste\ParentToObjectScript.cs" Line="35" Column="27" />
       <File FileName="Assets\Scripts\Chris\GravityFlip.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Ste\MovingTransformScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Chris\LevelSelect.cs" Line="71" Column="4" />
-      <File FileName="Assets\Scripts\Chris\InitialLevelLock.cs" Line="36" Column="3" />
-      <File FileName="Assets\Scripts\Chris\PlayerPrefsX.cs" Line="24" Column="23" />
-      <File FileName="Assets\Scripts\Ste\EndLevelScript.cs" Line="71" Column="59" />
+      <File FileName="Assets\Scripts\Ste\MovingTransformScript.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\Chris\LevelSelect.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Chris\InitialLevelLock.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Chris\PlayerPrefsX.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Ste\EndLevelScript.cs" Line="58" Column="1" />
+      <File FileName="Assets\Scripts\Ste\ParentScript.cs" Line="16" Column="2" />
+      <File FileName="Assets\Scripts\Ste\FollowTrackPointsScript.cs" Line="85" Column="3" />
+      <File FileName="Assets\Scripts\Ste\MovementScript.cs" Line="76" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
