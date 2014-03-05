@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Superceded by LevelSelectX.
+// Keeping the script just in case.
+
+using UnityEngine;
 using System.Collections;
 
 enum LevelsPage
